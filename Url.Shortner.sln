@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Url.Shortner", "Url.Shortner\Url.Shortner.csproj", "{17155F12-2CB5-4C6A-8418-B1AFA1E34ADB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17155F12-2CB5-4C6A-8418-B1AFA1E34ADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17155F12-2CB5-4C6A-8418-B1AFA1E34ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17155F12-2CB5-4C6A-8418-B1AFA1E34ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17155F12-2CB5-4C6A-8418-B1AFA1E34ADB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
