@@ -2,7 +2,7 @@ namespace Url.Shortner.Entity;
 
 public class ShortenedUrl
 {
-    public Guid Id { get; set; }
+    public Guid Id { get; set; } = Guid.NewGuid();
     
     public string Url { get; set; }
     

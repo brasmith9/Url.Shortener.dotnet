@@ -53,32 +53,6 @@ app.UseExceptionHandler(exceptionHandler =>
     });
 });
 
-app.MapPost("/api/v1/shorten",
-        async ([FromBody] ShortenUrlRequestDto request, HttpContext ctx, ILogger<ShortenUrlRequestDto> logger,
-            IUrlShortenerService urlShortenerService) =>
-        {
-            logger.LogInformation("Shorten Url Request");
-            if (!Uri.TryCreate(request.Url, UriKind.Absolute, out _))
-            {
-                return Results.BadRequest(new ApiResponse<ShortenUrlResponseDto>
-                {
-                    Code = StatusCodes.Status400BadRequest,
-                    Message = "Invalid Url"
-                });
-            }
-
-            var shortUrlResult = await urlShortenerService.CreateShortUrlAsync(ctx.Request.Host.Host,
-                ctx.Request.Scheme, ctx.Request.Path, request.Url);
-            return Results.BadRequest(new ApiResponse<string>
-            {
-                Code = StatusCodes.Status200OK,
-                Message = "Success",
-                Data = shortUrlResult.Result
-            });
-        })
-    .WithName("ShortenUrl")
-    .WithOpenApi();
-
-app.MapGet("/shorten", () => { return Results.Redirect("https://google.com"); });
+app.AddApiEndpoints();
 
 app.Run();
